@@ -1,0 +1,8 @@
+# Define the goal
+string step_name  # walk / turn
+---
+# Define the result
+bool terminado
+---
+# Define a feedback message
+float32 percent_complete

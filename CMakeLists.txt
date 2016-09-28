@@ -7,7 +7,11 @@ project(turtle_dance)
 find_package(catkin REQUIRED COMPONENTS
   rospy
   sensor_msgs
+  genmsg
+  actionlib_msgs
+  actionlib
 )
+
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -62,12 +66,14 @@ find_package(catkin REQUIRED COMPONENTS
 #   Action1.action
 #   Action2.action
 # )
+add_action_files(DIRECTORY action FILES DoDance.action)
 
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
 #   sensor_msgs
 # )
+generate_messages(DEPENDENCIES actionlib_msgs)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
